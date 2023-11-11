@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Converter</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://lineuisvg.netlify.app/lineuisvg.css" />
+  </head>
+  <body class="bg-slate-50 font-space dark:bg-slate-800">
+    <!-- Navbar -->
+    <nav
+      class="bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <span
+            class="self-center font-semibold text-2xl whitespace-nowrap text-slate-700 dark:text-slate-400"
+          >
+            <span class="text-primary">C</span>ase<span class="text-primary"
+              >C</span
+            >onverter
+          </span>
+        </a>
+        <div
+          class="items-center justify-between w-8 md:flex md:w-auto md:order-1"
+        >
+          <svg
+            class="moon cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#94a3b8"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <g>
+              <path
+                d="M19.9 2.307a.483.483 0 0 0-.9 0l-.43 1.095a.484.484 0 0 1-.272.274l-1.091.432a.486.486 0 0 0 0 .903l1.091.432a.48.48 0 0 1 .272.273L19 6.81c.162.41.74.41.9 0l.43-1.095a.484.484 0 0 1 .273-.273l1.091-.432a.486.486 0 0 0 0-.903l-1.091-.432a.484.484 0 0 1-.273-.274l-.43-1.095ZM16.033 8.13a.483.483 0 0 0-.9 0l-.157.399a.484.484 0 0 1-.272.273l-.398.158a.486.486 0 0 0 0 .903l.398.157c.125.05.223.148.272.274l.157.399c.161.41.739.41.9 0l.157-.4a.484.484 0 0 1 .272-.273l.398-.157a.486.486 0 0 0 0-.903l-.398-.158a.484.484 0 0 1-.272-.273l-.157-.4Z"
+              />
+              <path
+                d="M12 22c5.523 0 10-4.477 10-10c0-.463-.694-.54-.933-.143a6.5 6.5 0 1 1-8.924-8.924C12.54 2.693 12.463 2 12 2C6.477 2 2 6.477 2 12s4.477 10 10 10Z"
+              />
+            </g>
+          </svg>
+          <svg
+            class="sun cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#f59e0b"
+            opacity=".7"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <g>
+              <path d="M18 12a6 6 0 1 1-12 0a6 6 0 0 1 12 0Z" />
+              <path
+                fill-rule="evenodd"
+                d="M12 1.25a.75.75 0 0 1 .75.75v1a.75.75 0 0 1-1.5 0V2a.75.75 0 0 1 .75-.75ZM4.399 4.399a.75.75 0 0 1 1.06 0l.393.392a.75.75 0 0 1-1.06 1.061l-.393-.393a.75.75 0 0 1 0-1.06Zm15.202 0a.75.75 0 0 1 0 1.06l-.393.393a.75.75 0 0 1-1.06-1.06l.393-.393a.75.75 0 0 1 1.06 0ZM1.25 12a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1-.75-.75Zm19 0a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 0 1.5h-1a.75.75 0 0 1-.75-.75Zm-2.102 6.148a.75.75 0 0 1 1.06 0l.393.393a.75.75 0 1 1-1.06 1.06l-.393-.393a.75.75 0 0 1 0-1.06Zm-12.296 0a.75.75 0 0 1 0 1.06l-.393.393a.75.75 0 1 1-1.06-1.06l.392-.393a.75.75 0 0 1 1.061 0ZM12 20.25a.75.75 0 0 1 .75.75v1a.75.75 0 0 1-1.5 0v-1a.75.75 0 0 1 .75-.75Z"
+                clip-rule="evenodd"
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Box -->
+    <div
+      class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto mt-2 sm:mt-20 p-4"
+    >
+      <div class="w-full sm:w-1/2 h-80 relative">
+        <textarea
+          id="text"
+          class="w-full h-80 border-2 border-primary dark:bg-slate-500 outline-primary p-2 focus:outline-none rounded-lg resize-none dark:text-white"
+        ></textarea>
+        <div
+          onclick="copyToClipboard()"
+          class="h-10 w-10 absolute top-0 right-0 m-3 flex items-center justify-center bg-slate-500 dark:bg-slate-400 rounded-lg"
+        >
+          <i
+            class="lineui lineui-clipboard-text text-slate-700 dark:text-white text-lg"
+          ></i>
+        </div>
+        <div
+          id="alert"
+          class="absolute top-1/2 left-1/2 transform translate-x-[-50%] translate-y-[-50%] bg-salert px-5 py-2 rounded-lg text-slate-700 hidden"
+        >
+          <i class="lineui lineui-clipboard-tick pe-2"></i>Text copied
+          sucessfully!
+        </div>
+        <div class="btn-box flex flex-wrap justify-between dark:text-white">
+          <button
+            onclick="convertToUppercase()"
+            class="w-mbtn sm:w-lbtn bg-primary py-2 my-2 rounded-lg"
+          >
+            UPPERCASE
+          </button>
+          <button
+            onclick="convertToLowercase()"
+            class="w-mbtn sm:w-lbtn bg-primary py-2 my-2 rounded-lg"
+          >
+            lowercase
+          </button>
+          <button
+            onclick="convertToProperCase()"
+            class="w-mbtn sm:w-lbtn bg-primary py-2 my-2 rounded-lg"
+          >
+            Proper Case
+          </button>
+          <button
+            onclick="convertToSentenceCase()"
+            class="w-mbtn sm:w-lbtn bg-primary py-2 my-2 rounded-lg"
+          >
+            Sentence case
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Script  -->
+    <script src="./script.js"></script>
+    <script defer src="./caseconvert.js"></script>
+  </body>
+</html>
